@@ -1,7 +1,7 @@
 %define name    megacli
 %define up_name Linux_Cli
 %define version 1.01.39
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:		%{name}
 Version:	%{version}
