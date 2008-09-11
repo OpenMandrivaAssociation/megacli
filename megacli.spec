@@ -1,7 +1,7 @@
 %define name    megacli
-%define up_name Linux_Cli
-%define version 1.01.39
-%define release %mkrel 2
+%define up_name Linux_MegaCLI
+%define version 2.00.11
+%define release %mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -9,7 +9,8 @@ Release:	%{release}
 Summary:        LSI MegaRAID Storage Manager
 License:	Commercial
 Group:		System/Configuration/Hardware
-Source0:        http://www.lsi.com/support/downloads/megaraid/miscellaneous/linux/%{version}_%{up_name}.zip
+URL:        http://www.lsi.com
+Source0:        http://www.lsi.com/support/downloads/megaraid/miscellaneous/%{version}_%{up_name}.zip
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
@@ -20,7 +21,8 @@ troubleshoot your configuration.
 
 %prep
 %setup -q -c
-rpm2cpio MegaCli-%{version}-0.i386.rpm | cpio -id
+unzip MegaCliLin.zip
+rpm2cpio MegaCli-%{version}-1.i386.rpm | cpio -id
 
 %build
 
@@ -39,6 +41,6 @@ rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root) 
-%doc %{version}_Linux_Cli.txt
+%doc %{version}_%{up_name}.txt
 %{_sbindir}/megacli
 
