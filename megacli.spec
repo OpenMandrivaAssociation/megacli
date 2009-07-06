@@ -5,19 +5,16 @@
 
 Summary:	MegaCli is used to manage SAS RAID controllers
 Name:		megacli
-Version:	2.00.11
-Release:	%mkrel 2
+Version:	4.00.11
+Release:	%mkrel 1
 License:	Commercial
 Group:		System/Configuration/Hardware
 URL:		http://www.lsi.com
 Source0:	http://www.lsi.com/support/downloads/megaraid/miscellaneous/%{version}_%{up_name}.zip
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
-Those diagnostic tools include debug scripts and the sanlun utility, which
-provide information about the Linux host, storage system configuration, and
-LUNs. You can send the output from these scripts to NetApp Customer Support to
-troubleshoot your configuration.
+This package contains SAS MegaRAID Linux MegaCLI.
 
 %prep
 
