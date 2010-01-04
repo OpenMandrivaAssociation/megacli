@@ -3,10 +3,10 @@
 
 %define up_name Linux_MegaCLI
 
-Summary:	MegaCli is used to manage SAS RAID controllers
+Summary:	Manage SAS RAID controllers
 Name:		megacli
 Version:	5.00.20
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	Commercial
 Group:		System/Configuration/Hardware
 URL:		http://www.lsi.com
@@ -14,7 +14,7 @@ Source0:	http://www.lsi.com/support/downloads/megaraid/miscellaneous/%{version}_
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
-This package contains SAS MegaRAID Linux MegaCLI.
+MegaCli is used to manage SAS RAID controllers.
 
 %prep
 %setup -q -c
