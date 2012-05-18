@@ -5,40 +5,34 @@
 
 Summary:	Manage SAS RAID controllers
 Name:		megacli
-Version:	5.00.20
-Release:	%mkrel 2
+Version:	8.02.21
+Release:	1
 License:	Commercial
 Group:		System/Configuration/Hardware
 URL:		http://www.lsi.com
-Source0:	http://www.lsi.com/support/downloads/megaraid/miscellaneous/%{version}_Linux_CLI.zip
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+Source0:	http://www.lsi.com/support/downloads/megaraid/miscellaneous/%{version}_MegaCLI.zip
 
 %description
 MegaCli is used to manage SAS RAID controllers.
 
 %prep
 %setup -q -c
+cd %{version}_%{up_name}/
 unzip MegaCliLin.zip
-rpm2cpio MegaCli-%{version}-1.i386.rpm | cpio -id
+rpm2cpio MegaCli-%{version}-1.noarch.rpm | cpio -id
 
 %build
 
 %install
-rm -rf %{buildroot}
-
 export DONT_STRIP=1
 
 install -d -m 755 %{buildroot}/sbin
 %ifarch x86_64
-install -m 755 opt/MegaRAID/MegaCli/MegaCli64 %{buildroot}/sbin/megacli
+install -m 755 %{version}_%{up_name}/opt/MegaRAID/MegaCli/MegaCli64 %{buildroot}/sbin/megacli
 %else
-install -m 755 opt/MegaRAID/MegaCli/MegaCli %{buildroot}/sbin/megacli
+install -m 755 %{version}_%{up_name}/opt/MegaRAID/MegaCli/MegaCli %{buildroot}/sbin/megacli
 %endif
 
-%clean
-rm -rf %{buildroot}
-
 %files 
-%defattr(-,root,root) 
-%doc %{version}_%{up_name}.txt
+%doc %{version}_MegaCLI.txt
 /sbin/megacli
