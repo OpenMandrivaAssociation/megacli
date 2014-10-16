@@ -6,7 +6,7 @@
 Summary:	Manage SAS RAID controllers
 Name:		megacli
 Version:	8.02.21
-Release:	2
+Release:	3
 License:	Commercial
 Group:		System/Configuration/Hardware
 URL:		http://www.lsi.com
