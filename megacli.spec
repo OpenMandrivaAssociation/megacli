@@ -9,7 +9,7 @@ Version:	8.02.21
 Release:	4
 License:	Commercial
 Group:		System/Configuration/Hardware
-URL:		http://www.lsi.com
+URL:		https://www.lsi.com
 Source0:	http://www.lsi.com/support/downloads/megaraid/miscellaneous/%{version}_MegaCLI.zip
 
 %description
